@@ -1,38 +1,9 @@
 import os
 import pymupdf
-import chromadb
-
-from sentence_transformers import SentenceTransformer
 
 
 # ============================================================
-# 1. Load embedding model
-# ============================================================
-
-print("Loading embedding model...")
-
-embedding_model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
-)
-
-print("Embedding model loaded.")
-
-
-# ============================================================
-# 2. Create ChromaDB
-# ============================================================
-
-chroma_client = chromadb.PersistentClient(
-    path="chroma_db"
-)
-
-collection = chroma_client.get_or_create_collection(
-    name="documents"
-)
-
-
-# ============================================================
-# 3. Extract text from PDF
+# 1. Extract text from PDF
 # ============================================================
 
 def extract_text_from_pdf(pdf_path):
@@ -55,7 +26,7 @@ def extract_text_from_pdf(pdf_path):
 
 
 # ============================================================
-# 4. Create chunks
+# 2. Create chunks
 # ============================================================
 
 def create_chunks(
@@ -88,12 +59,10 @@ def create_chunks(
 
 
 # ============================================================
-# 5. Ingest documents
+# 3. Ingest documents
 # ============================================================
 
-def ingest_documents():
-
-    folder = "documents"
+def ingest_documents(collection, embedding_model, folder="documents"):
 
     pdf_files = [
         file
