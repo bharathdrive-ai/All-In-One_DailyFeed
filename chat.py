@@ -9,7 +9,7 @@ from ingest import ingest_documents
 # 1. Page setup
 # ============================================================
 st.set_page_config(page_title="Mini RAG", page_icon="📚")
-st.title("📚 Mini RAG")
+st.title("📚 Bharath's Mini RAG")
 
 # ============================================================
 # 2. Load API key (Streamlit secrets first, env var as fallback)
