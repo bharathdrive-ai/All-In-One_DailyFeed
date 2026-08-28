@@ -2,7 +2,7 @@ import os
 import chromadb
 import streamlit as st
 from sentence_transformers import SentenceTransformer
-from anthropic import Anthropic
+from google import genai
 from ingest import ingest_documents
 
 # ============================================================
@@ -14,17 +14,17 @@ st.title("📚 Mini RAG")
 # ============================================================
 # 2. Load API key (Streamlit secrets first, env var as fallback)
 # ============================================================
-api_key = st.secrets.get("ANTHROPIC_API_KEY", os.getenv("ANTHROPIC_API_KEY"))
+api_key = st.secrets.get("GOOGLE_API_KEY", os.getenv("GOOGLE_API_KEY"))
 if not api_key:
-    st.error("ANTHROPIC_API_KEY not found. Add it in Streamlit's Secrets settings.")
+    st.error("GOOGLE_API_KEY not found. Add it in Streamlit's Secrets settings.")
     st.stop()
 
 # ============================================================
 # 3. Cache the heavy resources so they load once, not every rerun
 # ============================================================
 @st.cache_resource
-def load_claude_client():
-    return Anthropic(api_key=api_key)
+def load_gemini_client():
+    return genai.Client(api_key=api_key)
 
 @st.cache_resource
 def load_embedding_model():
@@ -39,7 +39,7 @@ def load_collection():
             ingest_documents(collection, embedding_model)
     return collection
 
-claude = load_claude_client()
+gemini = load_gemini_client()
 embedding_model = load_embedding_model()
 collection = load_collection()
 
@@ -90,16 +90,11 @@ QUESTION
 ==============================
 {question}
 """
-    response = claude.messages.create(
-        model="claude-sonnet-5",
-        max_tokens=500,
-        messages=[{"role": "user", "content": prompt}]
+    response = gemini.models.generate_content(
+        model="gemini-3.6-flash",
+        contents=prompt
     )
-    answer = ""
-    for block in response.content:
-        if block.type == "text":
-            answer += block.text
-    return answer
+    return response.text
 
 # ============================================================
 # 6. Chat UI

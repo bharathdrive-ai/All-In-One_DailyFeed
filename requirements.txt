@@ -1,6 +1,6 @@
 pymupdf
 chromadb
 sentence-transformers
-anthropic
+google-genai
 python-dotenv
 streamlit
