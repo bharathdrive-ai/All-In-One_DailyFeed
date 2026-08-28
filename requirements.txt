@@ -3,3 +3,4 @@ chromadb
 sentence-transformers
 anthropic
 python-dotenv
+streamlit

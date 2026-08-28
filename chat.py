@@ -3,6 +3,7 @@ import chromadb
 import streamlit as st
 from sentence_transformers import SentenceTransformer
 from anthropic import Anthropic
+from ingest import ingest_documents
 
 # ============================================================
 # 1. Page setup
@@ -32,7 +33,11 @@ def load_embedding_model():
 @st.cache_resource
 def load_collection():
     chroma_client = chromadb.PersistentClient(path="chroma_db")
-    return chroma_client.get_collection(name="documents")
+    collection = chroma_client.get_or_create_collection(name="documents")
+    if collection.count() == 0:
+        with st.spinner("Indexing documents (first run only)..."):
+            ingest_documents(collection, embedding_model)
+    return collection
 
 claude = load_claude_client()
 embedding_model = load_embedding_model()

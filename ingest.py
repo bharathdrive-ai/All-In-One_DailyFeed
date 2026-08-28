@@ -159,9 +159,19 @@ def ingest_documents(collection, embedding_model, folder="documents"):
 
 
 # ============================================================
-# 6. Run
+# 4. Run
 # ============================================================
 
 if __name__ == "__main__":
 
-    ingest_documents()
+    import chromadb
+    from sentence_transformers import SentenceTransformer
+
+    print("Loading embedding model...")
+    embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+    print("Embedding model loaded.")
+
+    chroma_client = chromadb.PersistentClient(path="chroma_db")
+    collection = chroma_client.get_or_create_collection(name="documents")
+
+    ingest_documents(collection, embedding_model)
