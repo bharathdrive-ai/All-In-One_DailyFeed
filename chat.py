@@ -64,6 +64,11 @@ collection = load_collection(signature)
 # ============================================================
 # 3b. Header and sidebar
 # ============================================================
+# Shorter sidebar names for feeds (PDF filenames stay unchanged)
+DISPLAY_NAMES = {
+    "The Hindu - Tamil Nadu News": "TN News",
+}
+
 FEED_ICONS = [
     ("ai & tech", "🤖"),
     ("finance", "💹"),
@@ -128,7 +133,7 @@ with st.sidebar:
         for title in items:
             parts.append(
                 f'<div class="doc"><span class="doc-icon">{feed_icon(title)}</span>'
-                f"DailyDigest_{html.escape(title)}</div>"
+                f"DailyDigest_{html.escape(DISPLAY_NAMES.get(title, title))}</div>"
             )
     st.markdown("\n".join(parts), unsafe_allow_html=True)
     st.write("")
