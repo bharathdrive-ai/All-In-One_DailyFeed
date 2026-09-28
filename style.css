@@ -1,0 +1,331 @@
+/* ============================================================
+   Bharath's All-In-One Daily New RAG - custom styling
+   ============================================================ */
+
+:root {
+    --bg: #0a0f1e;
+    --card: rgba(22, 30, 54, 0.62);
+    --card-strong: rgba(26, 35, 64, 0.85);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(139, 156, 255, 0.45);
+    --text: #e7eaf3;
+    --muted: #9aa3bd;
+    --accent-1: #8b9cff;
+    --accent-2: #5eead4;
+    --accent-3: #f0abfc;
+}
+
+/* ---------- Animated aurora background ---------- */
+.stApp {
+    background:
+        radial-gradient(60rem 40rem at 10% -10%, rgba(99, 102, 241, 0.28), transparent 60%),
+        radial-gradient(50rem 35rem at 95% 10%, rgba(45, 212, 191, 0.18), transparent 60%),
+        radial-gradient(45rem 35rem at 50% 110%, rgba(217, 70, 239, 0.16), transparent 60%),
+        var(--bg);
+    background-size: 140% 140%;
+    background-attachment: fixed;
+    animation: aurora 24s ease-in-out infinite alternate;
+}
+
+@keyframes aurora {
+    0%   { background-position: 0% 0%; }
+    50%  { background-position: 60% 40%; }
+    100% { background-position: 100% 100%; }
+}
+
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
+/* Keep the chat input area see-through instead of a solid bar */
+[data-testid="stBottom"],
+[data-testid="stBottom"] > div,
+[data-testid="stBottomBlockContainer"] {
+    background: transparent !important;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    padding: 0.5rem 0 1.25rem;
+    animation: rise 0.6s ease-out both;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--card);
+    color: var(--muted);
+    font-size: 0.8rem;
+    backdrop-filter: blur(10px);
+}
+
+.live-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--accent-2);
+    box-shadow: 0 0 0 0 rgba(94, 234, 212, 0.6);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(94, 234, 212, 0.55); }
+    70%  { box-shadow: 0 0 0 0.5rem rgba(94, 234, 212, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(94, 234, 212, 0); }
+}
+
+.hero h1 {
+    margin: 0.8rem 0 0.4rem;
+    padding: 0;
+    font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    background: linear-gradient(100deg, #ffffff 10%, var(--accent-1) 45%, var(--accent-2) 75%, var(--accent-3));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 8s linear infinite;
+}
+
+@keyframes shimmer {
+    to { background-position: 200% center; }
+}
+
+.hero p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.stat {
+    padding: 0.55rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+    backdrop-filter: blur(10px);
+}
+
+.stat b {
+    display: block;
+    color: var(--text);
+    font-size: 1.05rem;
+}
+
+.stat span {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+@keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Suggested questions ---------- */
+.suggest-label {
+    margin: 0.4rem 0 0.2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+[data-testid="stMainBlockContainer"] .stButton > button {
+    width: 100%;
+    min-height: 3.2rem;
+    justify-content: flex-start;
+    text-align: left;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+    color: var(--text);
+    backdrop-filter: blur(10px);
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Let long suggestions wrap instead of being cut off with "..." */
+[data-testid="stMainBlockContainer"] .stButton > button p,
+[data-testid="stMainBlockContainer"] .stButton > button div {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+[data-testid="stMainBlockContainer"] .stButton > button:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-strong);
+    box-shadow: 0 10px 28px -12px rgba(139, 156, 255, 0.55);
+    color: #ffffff;
+}
+
+[data-testid="stMainBlockContainer"] .stButton > button:active {
+    transform: translateY(0);
+}
+
+/* ---------- Chat messages ---------- */
+[data-testid="stChatMessage"] {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    padding: 0.9rem 1rem;
+    animation: rise 0.35s ease-out both;
+}
+
+[data-testid="stExpander"] details {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(10, 15, 30, 0.35);
+}
+
+/* ---------- Interactive chat input ---------- */
+[data-testid="stChatInput"] {
+    border: 1px solid transparent !important;
+    border-radius: 22px !important;
+    background:
+        linear-gradient(var(--card-strong), var(--card-strong)) padding-box,
+        linear-gradient(120deg, rgba(139, 156, 255, 0.5), rgba(94, 234, 212, 0.35), rgba(240, 171, 252, 0.5)) border-box !important;
+    background-size: 100% 100%, 200% 200% !important;
+    backdrop-filter: blur(14px);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+[data-testid="stChatInput"]:hover {
+    box-shadow: 0 8px 30px -14px rgba(139, 156, 255, 0.6);
+}
+
+[data-testid="stChatInput"]:focus-within {
+    transform: translateY(-2px);
+    background:
+        linear-gradient(var(--card-strong), var(--card-strong)) padding-box,
+        linear-gradient(120deg, var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-1)) border-box !important;
+    background-size: 100% 100%, 300% 300% !important;
+    animation: border-flow 4s linear infinite;
+    box-shadow:
+        0 0 0 4px rgba(139, 156, 255, 0.14),
+        0 14px 40px -16px rgba(94, 234, 212, 0.55);
+}
+
+@keyframes border-flow {
+    from { background-position: 0 0, 0% 50%; }
+    to   { background-position: 0 0, 300% 50%; }
+}
+
+/* Remove Streamlit's own inner border so only the gradient shows */
+[data-testid="stChatInput"] > div {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+[data-testid="stChatInputTextArea"] {
+    color: var(--text) !important;
+    font-size: 1rem !important;
+}
+
+[data-testid="stChatInputTextArea"]::placeholder {
+    color: var(--muted) !important;
+}
+
+[data-testid="stChatInputSubmitButton"] {
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2)) !important;
+    color: #0a0f1e !important;
+    transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+[data-testid="stChatInputSubmitButton"]:hover {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+[data-testid="stChatInputSubmitButton"]:disabled {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: var(--muted) !important;
+    transform: none;
+}
+
+/* ---------- Sidebar ---------- */
+[data-testid="stSidebar"] > div:first-child {
+    background: rgba(12, 17, 34, 0.72);
+    backdrop-filter: blur(16px);
+    border-right: 1px solid var(--border);
+}
+
+.side-title {
+    margin: 0 0 0.2rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.side-sub {
+    margin-bottom: 1rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.day {
+    margin: 1rem 0 0.4rem;
+    color: var(--accent-1);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.doc {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 0.35rem;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
+    font-size: 0.86rem;
+    transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.doc:hover {
+    background: rgba(139, 156, 255, 0.1);
+    border-color: var(--border-strong);
+    transform: translateX(3px);
+}
+
+.doc-icon {
+    font-size: 1rem;
+}
+
+[data-testid="stSidebar"] .stButton > button {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--muted);
+}
+
+[data-testid="stSidebar"] .stButton > button:hover {
+    border-color: var(--border-strong);
+    color: var(--text);
+}
+
+/* ---------- Motion preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

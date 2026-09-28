@@ -1,6 +1,8 @@
+import html
 import os
 import re
 import time
+from datetime import date
 import chromadb
 import streamlit as st
 from sentence_transformers import SentenceTransformer
@@ -15,8 +17,9 @@ st.set_page_config(
     page_title="Bharath's All-In-One Daily New RAG",
     page_icon="📰"
 )
-st.title("📰 Bharath's All-In-One Daily New RAG")
-st.caption("Ask questions about the last 7 days of daily digests.")
+
+with open(os.path.join(os.path.dirname(__file__), "style.css"), encoding="utf-8") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # ============================================================
 # 2. Load API key (Streamlit secrets first, env var as fallback)
@@ -58,15 +61,79 @@ embedding_model = load_embedding_model()
 signature = documents_signature()
 collection = load_collection(signature)
 
+# ============================================================
+# 3b. Header and sidebar
+# ============================================================
+FEED_ICONS = [
+    ("ai & tech", "🤖"),
+    ("finance", "💹"),
+    ("politics", "🏛️"),
+    ("tamil nadu", "🗞️"),
+    ("amazon", "🛒"),
+]
+
+def split_name(filename):
+    # "Finance News Digest - 2026-09-29.pdf" -> ("Finance News Digest", date)
+    title = filename[:-4]
+    match = re.search(r"\s*-?\s*(\d{4})-(\d{2})-(\d{2})$", title)
+    if not match:
+        return title, None
+    try:
+        day = date(*map(int, match.groups()))
+    except ValueError:
+        return title, None
+    return title[:match.start()], day
+
+def feed_icon(title):
+    lowered = title.lower()
+    for keyword, icon in FEED_ICONS:
+        if keyword in lowered:
+            return icon
+    return "📄"
+
+docs = [split_name(name) for name, _ in signature]
+days = sorted({day for _, day in docs if day}, reverse=True)
+latest = days[0] if days else None
+feeds = sorted({title for title, _ in docs})
+
+latest_label = f"{latest.day} {latest:%b %Y}" if latest else "—"
+st.markdown(
+    f"""
+<div class="hero">
+  <span class="hero-badge"><span class="live-dot"></span>Updated daily at 06:00 IST</span>
+  <h1>Bharath's All-In-One Daily New RAG</h1>
+  <p>Ask anything about the last 7 days of news digests, deals and markets.</p>
+  <div class="stats">
+    <div class="stat"><b>{len(docs)}</b><span>digests</span></div>
+    <div class="stat"><b>{len(feeds)}</b><span>feeds</span></div>
+    <div class="stat"><b>{latest_label}</b><span>latest</span></div>
+  </div>
+</div>
+""",
+    unsafe_allow_html=True
+)
+
 with st.sidebar:
-    st.header("Documents")
-    st.write(f"{len(signature)} PDFs indexed")
-    # Newest dated PDFs first, undated ones (no YYYY-MM-DD) last
-    def newest_first(item):
-        match = re.search(r"\d{4}-\d{2}-\d{2}", item[0])
-        return (match.group(0) if match else "", item[0])
-    for name, _ in sorted(signature, key=newest_first, reverse=True):
-        st.write(f"- {name[:-4]}")
+    parts = [
+        '<div class="side-title">📚 Library</div>',
+        f'<div class="side-sub">{len(docs)} PDFs indexed</div>'
+    ]
+    # Newest day first, undated PDFs last
+    for day in days + [None]:
+        items = sorted(title for title, d in docs if d == day)
+        if not items:
+            continue
+        label = f"{day:%a} · {day.day} {day:%b}" if day else "Other"
+        parts.append(f'<div class="day">{label}</div>')
+        for title in items:
+            parts.append(
+                f'<div class="doc"><span class="doc-icon">{feed_icon(title)}</span>'
+                f"{html.escape(title)}</div>"
+            )
+    st.markdown("\n".join(parts), unsafe_allow_html=True)
+    st.write("")
+    if st.button("🧹 Clear chat", width="stretch"):
+        st.session_state.messages = []
 
 # ============================================================
 # 4. Retrieve relevant chunks (unchanged)
@@ -149,7 +216,34 @@ for msg in st.session_state.messages:
             with st.expander("Sources"):
                 for s in msg["sources"]:
                     st.write(f"- {s['source']} (chunk {s['chunk']})")
-question = st.chat_input("Ask a question about your documents")
+
+def ask(text):
+    st.session_state.pending_question = text
+
+typed = st.chat_input("Ask about today's news, deals, markets…")
+question = typed or st.session_state.pop("pending_question", None)
+
+# Clickable starter questions while the chat is empty
+if not st.session_state.messages and not question:
+    on = f" on {latest.day} {latest:%B}" if latest else ""
+    suggestions = [
+        f"🤖 Top AI & tech headlines{on}",
+        f"💹 Summarise the finance news{on}",
+        f"🛒 Best Amazon.in deals{on}",
+        f"🗞️ What's happening in Tamil Nadu{on}?",
+    ]
+    st.markdown('<div class="suggest-label">Try asking</div>', unsafe_allow_html=True)
+    cols = st.columns(2)
+    for i, text in enumerate(suggestions):
+        # Send the question without the leading emoji
+        cols[i % 2].button(
+            text,
+            key=f"suggest_{i}",
+            on_click=ask,
+            args=(text.split(" ", 1)[1],),
+            width="stretch"
+        )
+
 if question:
     st.session_state.messages.append({"role": "user", "content": question})
     with st.chat_message("user"):

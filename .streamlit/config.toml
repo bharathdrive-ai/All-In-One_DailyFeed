@@ -1,0 +1,12 @@
+[theme]
+base = "dark"
+primaryColor = "#8B9CFF"
+backgroundColor = "#0A0F1E"
+secondaryBackgroundColor = "#131A2E"
+textColor = "#E7EAF3"
+font = "sans serif"
+
+[client]
+# Hide the settings menu so viewers can't switch to a light theme
+# the custom dark styling isn't designed for
+toolbarMode = "minimal"
