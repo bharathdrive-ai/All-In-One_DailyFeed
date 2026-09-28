@@ -59,7 +59,21 @@ def create_chunks(
 
 
 # ============================================================
-# 3. Ingest documents
+# 3. Files already in the collection
+# ============================================================
+
+def get_indexed_files(collection):
+
+    results = collection.get(include=["metadatas"])
+
+    return {
+        metadata["source"]: metadata.get("size")
+        for metadata in results["metadatas"]
+    }
+
+
+# ============================================================
+# 4. Ingest documents (only new or changed PDFs)
 # ============================================================
 
 def ingest_documents(collection, embedding_model, folder="documents"):
@@ -69,6 +83,17 @@ def ingest_documents(collection, embedding_model, folder="documents"):
         for file in os.listdir(folder)
         if file.lower().endswith(".pdf")
     ]
+
+    indexed = get_indexed_files(collection)
+
+    # Remove chunks of PDFs that were deleted from the folder
+    for source in indexed:
+
+        if source not in pdf_files:
+
+            print(f"Removing: {source}")
+
+            collection.delete(where={"source": source})
 
     if not pdf_files:
 
@@ -84,6 +109,19 @@ def ingest_documents(collection, embedding_model, folder="documents"):
             folder,
             filename
         )
+
+        size = os.path.getsize(pdf_path)
+
+        if indexed.get(filename) == size:
+
+            print(f"Already indexed: {filename}")
+
+            continue
+
+        # Changed file: drop its old chunks before re-adding
+        if filename in indexed:
+
+            collection.delete(where={"source": filename})
 
         print()
         print("=" * 50)
@@ -130,7 +168,8 @@ def ingest_documents(collection, embedding_model, folder="documents"):
         metadatas = [
             {
                 "source": filename,
-                "chunk": i
+                "chunk": i,
+                "size": size
             }
             for i in range(len(chunks))
         ]
@@ -159,7 +198,7 @@ def ingest_documents(collection, embedding_model, folder="documents"):
 
 
 # ============================================================
-# 4. Run
+# 5. Run
 # ============================================================
 
 if __name__ == "__main__":

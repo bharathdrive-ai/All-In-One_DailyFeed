@@ -30,18 +30,25 @@ def load_gemini_client():
 def load_embedding_model():
     return SentenceTransformer("all-MiniLM-L6-v2")
 
+def documents_signature(folder="documents"):
+    # Changes whenever a PDF is added, removed or replaced
+    return tuple(sorted(
+        (name, os.path.getsize(os.path.join(folder, name)))
+        for name in os.listdir(folder)
+        if name.lower().endswith(".pdf")
+    ))
+
 @st.cache_resource
-def load_collection():
+def load_collection(signature):
     chroma_client = chromadb.PersistentClient(path="chroma_db")
     collection = chroma_client.get_or_create_collection(name="documents")
-    if collection.count() == 0:
-        with st.spinner("Indexing documents (first run only)..."):
-            ingest_documents(collection, embedding_model)
+    with st.spinner("Indexing new documents..."):
+        ingest_documents(collection, embedding_model)
     return collection
 
 gemini = load_gemini_client()
 embedding_model = load_embedding_model()
-collection = load_collection()
+collection = load_collection(documents_signature())
 
 # ============================================================
 # 4. Retrieve relevant chunks (unchanged)
