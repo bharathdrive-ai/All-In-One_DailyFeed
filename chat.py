@@ -77,7 +77,7 @@ FEED_ICONS = [
     ("ai & tech", "🧠"),
     ("finance", "💰"),
     ("politics", "🏛️"),
-    ("tamil nadu", "🗞️"),
+    ("tamil nadu", "த"),
     ("amazon", "🛒"),
 ]
 

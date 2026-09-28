@@ -306,7 +306,13 @@
 }
 
 .doc-icon {
+    /* Same slot for emoji and text icons (e.g. the Tamil letter) */
+    flex: 0 0 1.25rem;
+    text-align: center;
     font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent-2);
 }
 
 [data-testid="stSidebar"] .stButton > button {
