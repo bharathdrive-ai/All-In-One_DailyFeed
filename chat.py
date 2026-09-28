@@ -113,7 +113,6 @@ st.markdown(
   <h1>Bharath's All-In-One Daily News</h1>
   <p>Ask anything about the last 7 days of news digests, deals and markets.</p>
   <div class="stats">
-    <div class="stat"><b>{len(docs)}</b><span>digests</span></div>
     <div class="stat"><b>{len(feeds)}</b><span>feeds</span></div>
     <div class="stat"><b>{latest_label}</b><span>latest</span></div>
   </div>
