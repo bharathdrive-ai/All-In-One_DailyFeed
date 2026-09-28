@@ -70,6 +70,7 @@ DISPLAY_NAMES = {
     "AI & Tech News Digest": "AI & Tech News",
     "Amazon.in Deals": "OnlineShopping Deals",
     "Finance News Digest": "Finance News",
+    "Politics News Digest": "Politics News",
 }
 
 FEED_ICONS = [
