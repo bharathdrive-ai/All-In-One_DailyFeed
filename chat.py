@@ -68,6 +68,7 @@ collection = load_collection(signature)
 DISPLAY_NAMES = {
     "The Hindu - Tamil Nadu News": "TN News",
     "AI & Tech News Digest": "AI & Tech News",
+    "Amazon.in Deals": "OnlineShopping Deals",
 }
 
 FEED_ICONS = [
@@ -126,7 +127,10 @@ with st.sidebar:
     ]
     # Newest day first, undated PDFs last
     for day in days + [None]:
-        items = sorted(title for title, d in docs if d == day)
+        items = sorted(
+            (title for title, d in docs if d == day),
+            key=lambda title: DISPLAY_NAMES.get(title, title).lower()
+        )
         if not items:
             continue
         label = f"{day:%a} · {day.day} {day:%b}" if day else "Other"
