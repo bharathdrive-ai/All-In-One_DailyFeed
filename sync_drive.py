@@ -1,7 +1,10 @@
 import io
 import json
 import os
+import re
 import sys
+from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
@@ -17,6 +20,37 @@ from googleapiclient.http import MediaIoBaseDownload
 # ============================================================
 
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
+
+# Keep dated PDFs (e.g. "... - 2026-09-29.pdf") for this many days.
+# PDFs without a date in the name are always kept.
+KEEP_DAYS = 7
+
+DATE_PATTERN = re.compile(r"(\d{4}-\d{2}-\d{2})")
+
+
+def get_cutoff():
+
+    today = datetime.now(ZoneInfo("Asia/Kolkata")).date()
+
+    # Today counts as one of the days
+    return today - timedelta(days=KEEP_DAYS - 1)
+
+
+def is_expired(name, cutoff):
+
+    match = DATE_PATTERN.search(name)
+
+    if not match:
+
+        return False
+
+    try:
+
+        return date.fromisoformat(match.group(1)) < cutoff
+
+    except ValueError:
+
+        return False
 
 
 def get_drive_service():
@@ -97,12 +131,20 @@ def sync(folder="documents"):
 
     print(f"PDFs in Drive folder: {len(files)}")
 
+    cutoff = get_cutoff()
+
+    print(f"Keeping dated PDFs from {cutoff} onwards")
+
     downloaded = 0
 
     for file in files:
 
         # Drive allows "/" in names; keep only the base name
         name = os.path.basename(file["name"])
+
+        if is_expired(name, cutoff):
+
+            continue
 
         path = os.path.join(folder, name)
 
@@ -122,7 +164,31 @@ def sync(folder="documents"):
 
     print(f"New or updated PDFs: {downloaded}")
 
+    removed = prune_old_pdfs(folder, cutoff)
+
+    print(f"Old PDFs removed: {removed}")
+
     return downloaded
+
+
+def prune_old_pdfs(folder, cutoff):
+
+    removed = 0
+
+    for name in os.listdir(folder):
+
+        if (
+            name.lower().endswith(".pdf")
+            and is_expired(name, cutoff)
+        ):
+
+            print(f"Removing: {name}")
+
+            os.remove(os.path.join(folder, name))
+
+            removed += 1
+
+    return removed
 
 
 if __name__ == "__main__":
