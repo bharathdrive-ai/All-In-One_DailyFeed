@@ -242,7 +242,7 @@ if not st.session_state.messages and not question:
         f"🧠 Top AI & tech headlines{on}",
         f"💰 Summarise the finance news{on}",
         f"🛒 Best Amazon.in deals{on}",
-        f"🗞️ What's happening in Tamil Nadu{on}?",
+        f"த What's happening in Tamil Nadu{on}?",
     ]
     st.markdown('<div class="suggest-label">Try asking</div>', unsafe_allow_html=True)
     cols = st.columns(2)
