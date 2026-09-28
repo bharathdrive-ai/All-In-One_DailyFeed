@@ -270,12 +270,6 @@
     color: var(--text);
 }
 
-.side-sub {
-    margin-bottom: 1rem;
-    color: var(--muted);
-    font-size: 0.8rem;
-}
-
 .day {
     margin: 1rem 0 0.4rem;
     color: var(--accent-1);
