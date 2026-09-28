@@ -128,7 +128,7 @@ with st.sidebar:
         for title in items:
             parts.append(
                 f'<div class="doc"><span class="doc-icon">{feed_icon(title)}</span>'
-                f"{html.escape(title)}</div>"
+                f"DailyDigest_{html.escape(title)}</div>"
             )
     st.markdown("\n".join(parts), unsafe_allow_html=True)
     st.write("")
