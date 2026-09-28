@@ -100,7 +100,7 @@ latest_label = f"{latest.day} {latest:%b %Y}" if latest else "—"
 st.markdown(
     f"""
 <div class="hero">
-  <span class="hero-badge"><span class="live-dot"></span>Updated daily at 06:00 IST</span>
+  <span class="hero-badge"><span class="live-dot"></span>Daily update available from 06:00 AM IST</span>
   <h1>Bharath's All-In-One Daily News</h1>
   <p>Ask anything about the last 7 days of news digests, deals and markets.</p>
   <div class="stats">
