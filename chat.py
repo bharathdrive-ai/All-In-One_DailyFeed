@@ -14,7 +14,7 @@ from ingest import ingest_documents
 # 1. Page setup
 # ============================================================
 st.set_page_config(
-    page_title="Bharath's All-In-One Daily New RAG",
+    page_title="Bharath's All-In-One Daily News",
     page_icon="📰"
 )
 
@@ -101,7 +101,7 @@ st.markdown(
     f"""
 <div class="hero">
   <span class="hero-badge"><span class="live-dot"></span>Updated daily at 06:00 IST</span>
-  <h1>Bharath's All-In-One Daily New RAG</h1>
+  <h1>Bharath's All-In-One Daily News</h1>
   <p>Ask anything about the last 7 days of news digests, deals and markets.</p>
   <div class="stats">
     <div class="stat"><b>{len(docs)}</b><span>digests</span></div>
