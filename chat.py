@@ -135,11 +135,16 @@ QUESTION
 # ============================================================
 # 6. Chat UI
 # ============================================================
+def show_text(text):
+    # Streamlit reads $...$ as a maths formula, which garbles
+    # amounts like "$1B ... $10B"; escape $ so it shows as-is
+    st.markdown(text.replace("$", "\\$"))
+
 if "messages" not in st.session_state:
     st.session_state.messages = []
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
-        st.write(msg["content"])
+        show_text(msg["content"])
         if msg["role"] == "assistant" and msg.get("sources"):
             with st.expander("Sources"):
                 for s in msg["sources"]:
@@ -148,7 +153,7 @@ question = st.chat_input("Ask a question about your documents")
 if question:
     st.session_state.messages.append({"role": "user", "content": question})
     with st.chat_message("user"):
-        st.write(question)
+        show_text(question)
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             documents, metadatas = retrieve_documents(question)
@@ -158,7 +163,7 @@ if question:
             # Drop the question so the retry starts clean
             st.session_state.messages.pop()
             st.stop()
-        st.write(answer)
+        show_text(answer)
         with st.expander("Sources"):
             for m in metadatas:
                 st.write(f"- {m['source']} (chunk {m['chunk']})")
