@@ -1,4 +1,5 @@
 import os
+import re
 import chromadb
 import streamlit as st
 from sentence_transformers import SentenceTransformer
@@ -8,8 +9,12 @@ from ingest import ingest_documents
 # ============================================================
 # 1. Page setup
 # ============================================================
-st.set_page_config(page_title="Mini RAG", page_icon="📚")
-st.title("📚 Bharath's Mini RAG")
+st.set_page_config(
+    page_title="Bharath's All-In-One Daily New RAG",
+    page_icon="📰"
+)
+st.title("📰 Bharath's All-In-One Daily New RAG")
+st.caption("Ask questions about the last 7 days of daily digests.")
 
 # ============================================================
 # 2. Load API key (Streamlit secrets first, env var as fallback)
@@ -48,7 +53,18 @@ def load_collection(signature):
 
 gemini = load_gemini_client()
 embedding_model = load_embedding_model()
-collection = load_collection(documents_signature())
+signature = documents_signature()
+collection = load_collection(signature)
+
+with st.sidebar:
+    st.header("Documents")
+    st.write(f"{len(signature)} PDFs indexed")
+    # Newest dated PDFs first, undated ones (no YYYY-MM-DD) last
+    def newest_first(item):
+        match = re.search(r"\d{4}-\d{2}-\d{2}", item[0])
+        return (match.group(0) if match else "", item[0])
+    for name, _ in sorted(signature, key=newest_first, reverse=True):
+        st.write(f"- {name[:-4]}")
 
 # ============================================================
 # 4. Retrieve relevant chunks (unchanged)
