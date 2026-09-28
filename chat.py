@@ -69,6 +69,7 @@ DISPLAY_NAMES = {
     "The Hindu - Tamil Nadu News": "TN News",
     "AI & Tech News Digest": "AI & Tech News",
     "Amazon.in Deals": "OnlineShopping Deals",
+    "Finance News Digest": "Finance News",
 }
 
 FEED_ICONS = [
