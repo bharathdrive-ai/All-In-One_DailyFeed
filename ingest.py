@@ -1,5 +1,12 @@
 import os
+import re
+from datetime import date
+
 import pymupdf
+
+
+# Bump when the chunk format changes so every PDF is re-indexed
+INDEX_VERSION = 2
 
 
 # ============================================================
@@ -58,6 +65,34 @@ def create_chunks(
     return chunks
 
 
+def describe_source(filename):
+
+    # "AI & Tech News Digest - 2026-09-29.pdf" ->
+    # "Document: AI & Tech News Digest - 2026-09-29
+    #  Date: 29 September 2026 (2026-09-29)"
+    title = os.path.splitext(filename)[0]
+
+    header = f"Document: {title}"
+
+    match = re.search(r"(\d{4})-(\d{2})-(\d{2})", filename)
+
+    if match:
+
+        try:
+
+            day = date(*map(int, match.groups()))
+
+            header += (
+                f"\nDate: {day.day} {day:%B %Y} ({day.isoformat()})"
+            )
+
+        except ValueError:
+
+            pass
+
+    return header
+
+
 # ============================================================
 # 3. Files already in the collection
 # ============================================================
@@ -67,7 +102,10 @@ def get_indexed_files(collection):
     results = collection.get(include=["metadatas"])
 
     return {
-        metadata["source"]: metadata.get("size")
+        metadata["source"]: (
+            metadata.get("size"),
+            metadata.get("version")
+        )
         for metadata in results["metadatas"]
     }
 
@@ -112,13 +150,13 @@ def ingest_documents(collection, embedding_model, folder="documents"):
 
         size = os.path.getsize(pdf_path)
 
-        if indexed.get(filename) == size:
+        if indexed.get(filename) == (size, INDEX_VERSION):
 
             print(f"Already indexed: {filename}")
 
             continue
 
-        # Changed file: drop its old chunks before re-adding
+        # Changed file or old format: drop its old chunks before re-adding
         if filename in indexed:
 
             collection.delete(where={"source": filename})
@@ -144,7 +182,14 @@ def ingest_documents(collection, embedding_model, folder="documents"):
             continue
 
         # Create chunks
-        chunks = create_chunks(text)
+        # Put the document name and date in every chunk so questions
+        # like "AI headlines on 29 September" match the right PDF
+        header = describe_source(filename)
+
+        chunks = [
+            f"{header}\n\n{chunk}"
+            for chunk in create_chunks(text)
+        ]
 
         print(
             f"Chunks created: {len(chunks)}"
@@ -169,7 +214,8 @@ def ingest_documents(collection, embedding_model, folder="documents"):
             {
                 "source": filename,
                 "chunk": i,
-                "size": size
+                "size": size,
+                "version": INDEX_VERSION
             }
             for i in range(len(chunks))
         ]

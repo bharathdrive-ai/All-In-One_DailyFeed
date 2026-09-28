@@ -1,9 +1,11 @@
 import os
 import re
+import time
 import chromadb
 import streamlit as st
 from sentence_transformers import SentenceTransformer
 from google import genai
+from google.genai import errors
 from ingest import ingest_documents
 
 # ============================================================
@@ -73,7 +75,7 @@ def retrieve_documents(question):
     question_embedding = embedding_model.encode(question).tolist()
     results = collection.query(
         query_embeddings=[question_embedding],
-        n_results=3
+        n_results=6
     )
     documents = results["documents"][0]
     metadatas = results["metadatas"][0]
@@ -113,11 +115,22 @@ QUESTION
 ==============================
 {question}
 """
-    response = gemini.models.generate_content(
-        model="gemini-3.6-flash",
-        contents=prompt
-    )
-    return response.text
+    # Gemini returns 503 (overloaded) or 429 (rate limited) at busy
+    # times; these usually clear within seconds, so retry a few times
+    for attempt in range(3):
+        try:
+            response = gemini.models.generate_content(
+                model="gemini-3.6-flash",
+                contents=prompt
+            )
+            return response.text
+        except (errors.ServerError, errors.ClientError) as e:
+            retryable = isinstance(e, errors.ServerError) or e.code == 429
+            if not retryable:
+                raise
+            if attempt < 2:
+                time.sleep(2 * (attempt + 1))
+    return None
 
 # ============================================================
 # 6. Chat UI
@@ -140,6 +153,11 @@ if question:
         with st.spinner("Thinking..."):
             documents, metadatas = retrieve_documents(question)
             answer = generate_answer(question, documents, metadatas)
+        if answer is None:
+            st.warning("Gemini is busy right now. Please try again in a minute.")
+            # Drop the question so the retry starts clean
+            st.session_state.messages.pop()
+            st.stop()
         st.write(answer)
         with st.expander("Sources"):
             for m in metadatas:
