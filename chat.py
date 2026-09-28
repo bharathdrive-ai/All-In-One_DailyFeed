@@ -240,7 +240,7 @@ if not st.session_state.messages and not question:
     on = f" on {latest.day} {latest:%B}" if latest else ""
     suggestions = [
         f"🤖 Top AI & tech headlines{on}",
-        f"💹 Summarise the finance news{on}",
+        f"💰 Summarise the finance news{on}",
         f"🛒 Best Amazon.in deals{on}",
         f"🗞️ What's happening in Tamil Nadu{on}?",
     ]
