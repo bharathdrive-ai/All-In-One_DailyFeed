@@ -67,6 +67,7 @@ collection = load_collection(signature)
 # Shorter sidebar names for feeds (PDF filenames stay unchanged)
 DISPLAY_NAMES = {
     "The Hindu - Tamil Nadu News": "TN News",
+    "AI & Tech News Digest": "AI & Tech News",
 }
 
 FEED_ICONS = [
