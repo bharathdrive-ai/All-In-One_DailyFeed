@@ -115,7 +115,7 @@ st.markdown(
 
 with st.sidebar:
     parts = [
-        '<div class="side-title">📚 Library</div>',
+        '<div class="side-title">📰 Latest News</div>',
         f'<div class="side-sub">{len(docs)} PDFs indexed</div>'
     ]
     # Newest day first, undated PDFs last
