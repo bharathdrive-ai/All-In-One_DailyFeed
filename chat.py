@@ -75,7 +75,7 @@ DISPLAY_NAMES = {
 
 FEED_ICONS = [
     ("ai & tech", "🧠"),
-    ("finance", "💹"),
+    ("finance", "💰"),
     ("politics", "🏛️"),
     ("tamil nadu", "🗞️"),
     ("amazon", "🛒"),
