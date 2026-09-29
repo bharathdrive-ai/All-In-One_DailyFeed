@@ -179,21 +179,26 @@ QUESTION
 {question}
 """
     # Gemini returns 503 (overloaded) or 429 (rate limited) at busy
-    # times; these usually clear within seconds, so retry a few times
+    # times; these usually clear within seconds, so retry a few times.
+    # Returns (answer, None) or (None, last error).
+    last_error = None
     for attempt in range(3):
         try:
             response = gemini.models.generate_content(
                 model="gemini-3.6-flash",
                 contents=prompt
             )
-            return response.text
+            return response.text, None
         except (errors.ServerError, errors.ClientError) as e:
+            # Visible under "Manage app" -> logs, to tell overload from quota
+            print(f"Gemini error (attempt {attempt + 1}/3): {e.code} {e.status}: {e.message}", flush=True)
             retryable = isinstance(e, errors.ServerError) or e.code == 429
             if not retryable:
                 raise
+            last_error = e
             if attempt < 2:
                 time.sleep(2 * (attempt + 1))
-    return None
+    return None, last_error
 
 # ============================================================
 # 6. Chat UI
@@ -247,9 +252,15 @@ if question:
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             documents, metadatas = retrieve_documents(question)
-            answer = generate_answer(question, documents, metadatas)
+            answer, error = generate_answer(question, documents, metadatas)
         if answer is None:
-            st.warning("Gemini is busy right now. Please try again in a minute.")
+            if error is not None and error.code == 429:
+                st.warning(
+                    "The Gemini usage limit for this API key has been reached. "
+                    "It resets daily; check your quota in Google AI Studio."
+                )
+            else:
+                st.warning("Gemini is busy right now. Please try again in a minute.")
             # Drop the question so the retry starts clean
             st.session_state.messages.pop()
             st.stop()
