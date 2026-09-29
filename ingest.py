@@ -6,7 +6,56 @@ import pymupdf
 
 
 # Bump when the chunk format changes so every PDF is re-indexed
-INDEX_VERSION = 2
+INDEX_VERSION = 3
+
+# Readable titles for the feed keys in "DailyDigest_<Feed>_<date>.pdf"
+FEED_TITLES = {
+    "AITechNews": "AI & Tech News Digest",
+    "FinanceNews": "Finance News Digest",
+    "PoliticsNews": "Politics News Digest",
+    "TN-News": "The Hindu - Tamil Nadu News",
+    "AmazonDeals": "Amazon.in Deals",
+}
+
+
+def parse_source(filename):
+
+    # Returns (readable title, date or None) for both naming styles:
+    #   "DailyDigest_AITechNews_2026-09-29.pdf"
+    #       -> ("AI & Tech News Digest", 2026-09-29)
+    #   "AI & Tech News Digest - 2026-09-29.pdf"
+    #       -> ("AI & Tech News Digest", 2026-09-29)
+    stem = os.path.splitext(filename)[0]
+
+    match = re.match(r"^DailyDigest_(.+?)_(\d{4}-\d{2}-\d{2})$", stem)
+
+    if match:
+
+        key, stamp = match.groups()
+
+        # Unknown feeds: "WorldSportsNews" -> "World Sports News"
+        title = FEED_TITLES.get(
+            key,
+            re.sub(r"(?<=[a-z])(?=[A-Z])", " ", key).replace("-", " ")
+        )
+
+    else:
+
+        match = re.search(r"\s*-?\s*(\d{4}-\d{2}-\d{2})$", stem)
+
+        if not match:
+
+            return stem, None
+
+        title, stamp = stem[:match.start()], match.group(1)
+
+    try:
+
+        return title, date.fromisoformat(stamp)
+
+    except ValueError:
+
+        return title, None
 
 
 # ============================================================
@@ -67,28 +116,18 @@ def create_chunks(
 
 def describe_source(filename):
 
-    # "AI & Tech News Digest - 2026-09-29.pdf" ->
-    # "Document: AI & Tech News Digest - 2026-09-29
+    # "DailyDigest_AITechNews_2026-09-29.pdf" ->
+    # "Document: AI & Tech News Digest
     #  Date: 29 September 2026 (2026-09-29)"
-    title = os.path.splitext(filename)[0]
+    title, day = parse_source(filename)
 
     header = f"Document: {title}"
 
-    match = re.search(r"(\d{4})-(\d{2})-(\d{2})", filename)
+    if day:
 
-    if match:
-
-        try:
-
-            day = date(*map(int, match.groups()))
-
-            header += (
-                f"\nDate: {day.day} {day:%B %Y} ({day.isoformat()})"
-            )
-
-        except ValueError:
-
-            pass
+        header += (
+            f"\nDate: {day.day} {day:%B %Y} ({day.isoformat()})"
+        )
 
     return header
 

@@ -168,7 +168,43 @@ def sync(folder="documents"):
 
     print(f"Old PDFs removed: {removed}")
 
+    # Safety net: an empty listing may mean a sharing or API problem,
+    # so never treat it as "everything was deleted"
+    if files:
+
+        missing = remove_missing_pdfs(
+            folder,
+            {os.path.basename(file["name"]) for file in files}
+        )
+
+        print(f"PDFs no longer in Drive removed: {missing}")
+
+    else:
+
+        print("Drive folder is empty; skipping mirror clean-up.")
+
     return downloaded
+
+
+def remove_missing_pdfs(folder, drive_names):
+
+    # Mirror the Drive folder: drop PDFs that were renamed or deleted there
+    removed = 0
+
+    for name in os.listdir(folder):
+
+        if (
+            name.lower().endswith(".pdf")
+            and name not in drive_names
+        ):
+
+            print(f"Removing (not in Drive): {name}")
+
+            os.remove(os.path.join(folder, name))
+
+            removed += 1
+
+    return removed
 
 
 def prune_old_pdfs(folder, cutoff):

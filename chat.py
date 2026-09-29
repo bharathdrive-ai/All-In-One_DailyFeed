@@ -1,14 +1,12 @@
 import html
 import os
-import re
 import time
-from datetime import date
 import chromadb
 import streamlit as st
 from sentence_transformers import SentenceTransformer
 from google import genai
 from google.genai import errors
-from ingest import ingest_documents
+from ingest import ingest_documents, parse_source
 
 # ============================================================
 # 1. Page setup
@@ -81,18 +79,6 @@ FEED_ICONS = [
     ("amazon", "🛒"),
 ]
 
-def split_name(filename):
-    # "Finance News Digest - 2026-09-29.pdf" -> ("Finance News Digest", date)
-    title = filename[:-4]
-    match = re.search(r"\s*-?\s*(\d{4})-(\d{2})-(\d{2})$", title)
-    if not match:
-        return title, None
-    try:
-        day = date(*map(int, match.groups()))
-    except ValueError:
-        return title, None
-    return title[:match.start()], day
-
 def feed_icon(title):
     lowered = title.lower()
     for keyword, icon in FEED_ICONS:
@@ -100,7 +86,7 @@ def feed_icon(title):
             return icon
     return "📄"
 
-docs = [split_name(name) for name, _ in signature]
+docs = [parse_source(name) for name, _ in signature]
 days = sorted({day for _, day in docs if day}, reverse=True)
 latest = days[0] if days else None
 feeds = sorted({title for title, _ in docs})
