@@ -27,6 +27,9 @@ if not api_key:
     st.error("GOOGLE_API_KEY not found. Add it in Streamlit's Secrets settings.")
     st.stop()
 
+# Lighter model first (larger free allowance), full Flash as backup
+GEMINI_MODELS = ["gemini-3.5-flash-lite", "gemini-3.6-flash"]
+
 # ============================================================
 # 3. Cache the heavy resources so they load once, not every rerun
 # ============================================================
@@ -178,26 +181,30 @@ QUESTION
 ==============================
 {question}
 """
-    # Gemini returns 503 (overloaded) or 429 (rate limited) at busy
-    # times; these usually clear within seconds, so retry a few times.
+    # Try each model in turn; each has its own free-tier allowance.
+    #   503 (overloaded): retry the same model once after a short pause
+    #   429 (quota used up) / 404 (model not available): move straight
+    #   to the next model - retrying would only burn more quota
     # Returns (answer, None) or (None, last error).
     last_error = None
-    for attempt in range(3):
-        try:
-            response = gemini.models.generate_content(
-                model="gemini-3.6-flash",
-                contents=prompt
-            )
-            return response.text, None
-        except (errors.ServerError, errors.ClientError) as e:
-            # Visible under "Manage app" -> logs, to tell overload from quota
-            print(f"Gemini error (attempt {attempt + 1}/3): {e.code} {e.status}: {e.message}", flush=True)
-            retryable = isinstance(e, errors.ServerError) or e.code == 429
-            if not retryable:
-                raise
-            last_error = e
-            if attempt < 2:
-                time.sleep(2 * (attempt + 1))
+    for model in GEMINI_MODELS:
+        for attempt in range(2):
+            try:
+                response = gemini.models.generate_content(
+                    model=model,
+                    contents=prompt
+                )
+                return response.text, None
+            except (errors.ServerError, errors.ClientError) as e:
+                # Visible under "Manage app" -> logs, to tell overload from quota
+                print(f"Gemini error ({model}, attempt {attempt + 1}): {e.code} {e.status}: {e.message}", flush=True)
+                if isinstance(e, errors.ClientError) and e.code not in (429, 404):
+                    raise
+                last_error = e
+                if isinstance(e, errors.ServerError) and attempt == 0:
+                    time.sleep(2)
+                    continue
+                break
     return None, last_error
 
 # ============================================================
