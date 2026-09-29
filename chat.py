@@ -236,21 +236,21 @@ question = typed or st.session_state.pop("pending_question", None)
 # Clickable starter questions while the chat is empty
 if not st.session_state.messages and not question:
     on = f" on {latest.day} {latest:%B}" if latest else ""
+    # (button label, question sent to the RAG)
     suggestions = [
-        f"🧠 Top AI & tech headlines{on}",
-        f"💰 Summarise the finance news{on}",
-        f"🛒 Best Amazon.in deals{on}",
-        f"த What's happening in Tamil Nadu{on}?",
+        (f"🧠 Top AI & tech headlines{on}", f"Top AI & tech headlines{on}"),
+        (f"💰 Summarise the finance news{on}", f"Summarise the finance news{on}"),
+        ("🛒 New Offers and Shopping Trends", f"What are the new offers and shopping trends{on}?"),
+        (f"த What's happening in Tamil Nadu{on}?", f"What's happening in Tamil Nadu{on}?"),
     ]
     st.markdown('<div class="suggest-label">Try asking</div>', unsafe_allow_html=True)
     cols = st.columns(2)
-    for i, text in enumerate(suggestions):
-        # Send the question without the leading emoji
+    for i, (label, prompt) in enumerate(suggestions):
         cols[i % 2].button(
-            text,
+            label,
             key=f"suggest_{i}",
             on_click=ask,
-            args=(text.split(" ", 1)[1],),
+            args=(prompt,),
             width="stretch"
         )
 
