@@ -1,4 +1,5 @@
 import html
+import importlib
 import os
 import time
 import chromadb
@@ -6,6 +7,11 @@ import streamlit as st
 from sentence_transformers import SentenceTransformer
 from google import genai
 from google.genai import errors
+import ingest
+
+# Streamlit Cloud reruns chat.py after a git update but keeps the old
+# ingest module in memory; reload it so new functions are always found
+importlib.reload(ingest)
 from ingest import ingest_documents, is_reference, parse_source, source_label
 
 # ============================================================
