@@ -18,6 +18,37 @@ FEED_TITLES = {
 }
 
 
+# Background PDFs named "REF_<Topic>.pdf" are searched like any other PDF
+# but hidden from the sidebar, and cited only by topic
+REFERENCE_PREFIX = "REF_"
+
+
+def is_reference(filename):
+
+    return filename.upper().startswith(REFERENCE_PREFIX)
+
+
+def reference_topic(filename):
+
+    # "REF_Artificial Intelligence.pdf" / "REF_Artificial_Intelligence.pdf"
+    # / "REF_ArtificialIntelligence.pdf" -> "Artificial Intelligence"
+    topic = os.path.splitext(filename)[0][len(REFERENCE_PREFIX):]
+
+    topic = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", topic.replace("_", " "))
+
+    return " ".join(topic.split()) or "Reference"
+
+
+def source_label(filename):
+
+    # What users (and Gemini) see as the source of an answer
+    if is_reference(filename):
+
+        return reference_topic(filename)
+
+    return filename
+
+
 def parse_source(filename):
 
     # Returns (readable title, date or None) for both naming styles:
@@ -25,6 +56,12 @@ def parse_source(filename):
     #       -> ("AI & Tech News Digest", 2026-09-29)
     #   "AI & Tech News Digest - 2026-09-29.pdf"
     #       -> ("AI & Tech News Digest", 2026-09-29)
+    #   "REF_Artificial Intelligence.pdf"
+    #       -> ("Artificial Intelligence", None)
+    if is_reference(filename):
+
+        return reference_topic(filename), None
+
     stem = os.path.splitext(filename)[0]
 
     match = re.match(r"^DailyDigest_(.+?)_(\d{4}-\d{2}-\d{2})$", stem)

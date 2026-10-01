@@ -6,7 +6,7 @@ import streamlit as st
 from sentence_transformers import SentenceTransformer
 from google import genai
 from google.genai import errors
-from ingest import ingest_documents, parse_source
+from ingest import ingest_documents, is_reference, parse_source, source_label
 
 # ============================================================
 # 1. Page setup
@@ -89,7 +89,8 @@ def feed_icon(title):
             return icon
     return "📄"
 
-docs = [parse_source(name) for name, _ in signature]
+# REF_ background PDFs are searchable but not listed in the UI
+docs = [parse_source(name) for name, _ in signature if not is_reference(name)]
 days = sorted({day for _, day in docs if day}, reverse=True)
 latest = days[0] if days else None
 feeds = sorted({title for title, _ in docs})
@@ -155,7 +156,7 @@ def generate_answer(question, documents, metadatas):
     for document, metadata in zip(documents, metadatas):
         context_parts.append(
             f"""
-Source: {metadata['source']}
+Source: {source_label(metadata['source'])}
 Chunk: {metadata['chunk']}
 {document}
 """
@@ -215,15 +216,27 @@ def show_text(text):
     # amounts like "$1B ... $10B"; escape $ so it shows as-is
     st.markdown(text.replace("$", "\\$"))
 
+def show_sources(metadatas):
+    # REF_ PDFs are shown by topic only ("Source = Artificial Intelligence"),
+    # once each, never by file name
+    seen = set()
+    with st.expander("Sources"):
+        for m in metadatas:
+            if is_reference(m["source"]):
+                line = f"- Source = {source_label(m['source'])}"
+            else:
+                line = f"- {m['source']} (chunk {m['chunk']})"
+            if line not in seen:
+                seen.add(line)
+                show_text(line)
+
 if "messages" not in st.session_state:
     st.session_state.messages = []
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         show_text(msg["content"])
         if msg["role"] == "assistant" and msg.get("sources"):
-            with st.expander("Sources"):
-                for s in msg["sources"]:
-                    st.write(f"- {s['source']} (chunk {s['chunk']})")
+            show_sources(msg["sources"])
 
 def ask(text):
     st.session_state.pending_question = text
@@ -272,9 +285,7 @@ if question:
             st.session_state.messages.pop()
             st.stop()
         show_text(answer)
-        with st.expander("Sources"):
-            for m in metadatas:
-                st.write(f"- {m['source']} (chunk {m['chunk']})")
+        show_sources(metadatas)
     st.session_state.messages.append({
         "role": "assistant",
         "content": answer,
