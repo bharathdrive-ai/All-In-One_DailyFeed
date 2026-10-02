@@ -3,7 +3,7 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [16 0 R 25 0 R 36 0 R 41 0 R 49 0 R] /Count 5 >>
+<< /Type /Pages /Kids [16 0 R 25 0 R 36 0 R 41 0 R 49 0 R 51 0 R] /Count 6 >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
@@ -118,7 +118,7 @@ ET BT
 (   https://www.livemint.com/market/mark-to-market/manufacturing-pmi-inflation-input-costs-)'
 (     indian-economy-11790843850022.html)'
 ET
-BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 1 of 5) Tj ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 1 of 6) Tj ET
 endstream
 endobj
 7 0 obj
@@ -248,7 +248,7 @@ BT
 0 0.27 0.6 rg
 (   https://www.bbc.com/news/articles/c920v3y1gjgpo)'
 ET
-BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 2 of 5) Tj ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 2 of 6) Tj ET
 endstream
 endobj
 18 0 obj
@@ -380,7 +380,7 @@ BT
 (   https://www.livemint.com/market/stock-market-news/small-cap-stocks-mutual-funds-fpi-ret)'
 (     ail-investors-q1fy27-11787195441939.html)'
 ET
-BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 3 of 5) Tj ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 3 of 6) Tj ET
 endstream
 endobj
 27 0 obj
@@ -490,7 +490,7 @@ BT
 0 0.27 0.6 rg
 (   https://www.bbc.com/news/articles/cvzez7k0pn40o)'
 ET
-BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 4 of 5) Tj ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 4 of 6) Tj ET
 endstream
 endobj
 38 0 obj
@@ -506,7 +506,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 37 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Annots [38 0 R 39 0 R 40 0 R] >>
 endobj
 42 0 obj
-<< /Length 1997 >>
+<< /Length 2422 >>
 stream
 BT
 13 TL 50 792 Td
@@ -568,8 +568,18 @@ BT
 (Top themes today: AI boom and financial-stability risk, Precious metals slide \(gold down)'
 (  6% in September\), Indian fund flows and new IPO/tokenized-bond issuance, UK household)'
 (  energy costs)'
+0 -6 Td
+0 -6 Td
+(===== 2026-10-02 \(update 2\) =====)'
+/F1 10 Tf
+(No new news stories in this update \(added on request: fuel prices, and Kochi replaces the)'
+(  Kerala state-wide rate\).)'
+0 -6 Td
+(Gold & silver rates: unchanged since the earlier section today. Kochi \(now tracked in)'
+(  place of the Kerala state-wide rate\): Gold 24K Rs 14,924 \(-33\) | Gold 22K Rs 13,680)'
+(  \(-30\) | Silver Rs 2,40,000 \(-5,000\))'
 ET
-BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 5 of 5) Tj ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 5 of 6) Tj ET
 endstream
 endobj
 43 0 obj
@@ -593,60 +603,111 @@ endobj
 49 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 42 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Annots [43 0 R 44 0 R 45 0 R 46 0 R 47 0 R 48 0 R] >>
 endobj
+50 0 obj
+<< /Length 1440 >>
+stream
+BT
+13 TL 50 792 Td
+0 g
+/F2 10 Tf
+(--- Petrol & Diesel Prices \(India\) ---)'
+/F1 10 Tf
+(Source: https://www.goodreturns.in/petrol-price.html \(retail pump prices per litre, as of)'
+(  September 30, 2026\))'
+(\(figures in brackets = change vs previous price; + up, - down, 0 unchanged\))'
+(City | Petrol /L \(chg\) | Diesel /L \(chg\))'
+([Andhra Pradesh])'
+(  Vijayawada | Rs 117.25 \(0\) | Rs 104.96 \(0\))'
+([Bihar])'
+(  Patna | Rs 113.37 \(0\) | Rs 99.36 \(0\))'
+([Delhi])'
+(  Delhi | Rs 102.12 \(0\) | Rs 95.20 \(0\))'
+([Gujarat])'
+(  Ahmedabad | Rs 102.15 \(+0.32\) | Rs 98.27 \(+0.35\))'
+([Karnataka])'
+(  Bengaluru | Rs 111.68 \(0\) | Rs 99.56 \(0\))'
+(  Mysuru | Rs 110.44 \(0\) | Rs 98.39 \(0\))'
+([Kerala])'
+(  Kochi | Rs 113.53 \(0\) | Rs 102.45 \(0\))'
+(  Thiruvananthapuram | Rs 115.49 \(0\) | Rs 104.40 \(0\))'
+([Madhya Pradesh])'
+(  Indore | Rs 114.58 \(0\) | Rs 99.70 \(0\))'
+([Maharashtra])'
+(  Mumbai | Rs 111.21 \(0\) | Rs 97.83 \(0\))'
+(  Pune | Rs 112.02 \(0\) | Rs 98.66 \(0\))'
+([Rajasthan])'
+(  Jaipur | Rs 113.19 \(+0.53\) | Rs 98.25 \(+0.47\))'
+([Tamil Nadu])'
+(  Chennai | Rs 107.76 \(-0.01\) | Rs 99.55 \(0\))'
+(  Coimbatore | Rs 108.63 \(0\) | Rs 100.45 \(0\))'
+(  Tiruchirappalli | Rs 108.20 \(0\) | Rs 100.05 \(0\))'
+([Telangana])'
+(  Hyderabad | Rs 116.15 \(0\) | Rs 104.23 \(0\))'
+([West Bengal])'
+(  Kolkata | Rs 113.51 \(0\) | Rs 99.82 \(0\))'
+ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 6 of 6) Tj ET
+endstream
+endobj
+51 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 50 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
 xref
-0 50
+0 52
 0000000000 65535 f 
 0000000009 00000 n 
 0000000058 00000 n 
-0000000144 00000 n 
-0000000241 00000 n 
-0000000343 00000 n 
-0000000431 00000 n 
-0000004460 00000 n 
-0000004715 00000 n 
-0000004986 00000 n 
-0000005241 00000 n 
-0000005479 00000 n 
-0000005722 00000 n 
-0000005968 00000 n 
-0000006187 00000 n 
-0000006389 00000 n 
-0000006596 00000 n 
-0000006803 00000 n 
-0000010645 00000 n 
-0000010824 00000 n 
-0000010958 00000 n 
-0000011091 00000 n 
-0000011224 00000 n 
-0000011358 00000 n 
-0000011492 00000 n 
-0000011624 00000 n 
-0000011821 00000 n 
-0000015903 00000 n 
-0000016037 00000 n 
-0000016256 00000 n 
-0000016474 00000 n 
-0000016734 00000 n 
-0000016962 00000 n 
-0000017224 00000 n 
-0000017424 00000 n 
-0000017664 00000 n 
-0000017876 00000 n 
-0000018087 00000 n 
-0000021391 00000 n 
-0000021655 00000 n 
-0000021789 00000 n 
-0000021923 00000 n 
-0000022092 00000 n 
-0000024142 00000 n 
-0000024276 00000 n 
-0000024409 00000 n 
-0000024543 00000 n 
-0000024676 00000 n 
-0000024810 00000 n 
-0000024944 00000 n 
+0000000151 00000 n 
+0000000248 00000 n 
+0000000350 00000 n 
+0000000438 00000 n 
+0000004467 00000 n 
+0000004722 00000 n 
+0000004993 00000 n 
+0000005248 00000 n 
+0000005486 00000 n 
+0000005729 00000 n 
+0000005975 00000 n 
+0000006194 00000 n 
+0000006396 00000 n 
+0000006603 00000 n 
+0000006810 00000 n 
+0000010652 00000 n 
+0000010831 00000 n 
+0000010965 00000 n 
+0000011098 00000 n 
+0000011231 00000 n 
+0000011365 00000 n 
+0000011499 00000 n 
+0000011631 00000 n 
+0000011828 00000 n 
+0000015910 00000 n 
+0000016044 00000 n 
+0000016263 00000 n 
+0000016481 00000 n 
+0000016741 00000 n 
+0000016969 00000 n 
+0000017231 00000 n 
+0000017431 00000 n 
+0000017671 00000 n 
+0000017883 00000 n 
+0000018094 00000 n 
+0000021398 00000 n 
+0000021662 00000 n 
+0000021796 00000 n 
+0000021930 00000 n 
+0000022099 00000 n 
+0000024574 00000 n 
+0000024708 00000 n 
+0000024841 00000 n 
+0000024975 00000 n 
+0000025108 00000 n 
+0000025242 00000 n 
+0000025376 00000 n 
+0000025566 00000 n 
+0000027059 00000 n 
 trailer
-<< /Size 50 /Root 1 0 R /Info 5 0 R >>
+<< /Size 52 /Root 1 0 R /Info 5 0 R >>
 startxref
-25134
+27197
 %%EOF
