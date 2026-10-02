@@ -3,7 +3,7 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [17 0 R 28 0 R 40 0 R 44 0 R] /Count 4 >>
+<< /Type /Pages /Kids [17 0 R 28 0 R 40 0 R 52 0 R 63 0 R 74 0 R 81 0 R] /Count 7 >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
@@ -122,7 +122,7 @@ ET BT
 (   https://techcrunch.com/2026/10/01/satlyt-founded-by-a-former-google-and-spacex-product-)'
 (     manager-raises-8m-to-run-ai-on-satellites/)'
 ET
-BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 1 of 4) Tj ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 1 of 7) Tj ET
 endstream
 endobj
 7 0 obj
@@ -261,7 +261,7 @@ BT
 (   https://www.ess-news.com/2026/09/30/replus-engitech-and-indus-towers-plan-1-5-gwh-telec)'
 (     om-bess-collaboration/)'
 ET
-BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 2 of 4) Tj ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 2 of 7) Tj ET
 endstream
 endobj
 19 0 obj
@@ -404,7 +404,7 @@ BT
 (   https://electronics.economictimes.indiatimes.com/news/supply-chain-trade/haier-godrej-b)'
 (     lue-star-failed-to-detect-fake-e-waste-recycling-claims-india-notice-shows/134606090)'
 ET
-BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 3 of 4) Tj ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 3 of 7) Tj ET
 endstream
 endobj
 30 0 obj
@@ -441,7 +441,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 29 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Annots [30 0 R 31 0 R 32 0 R 33 0 R 34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R] >>
 endobj
 41 0 obj
-<< /Length 967 >>
+<< /Length 3910 >>
 stream
 BT
 13 TL 50 792 Td
@@ -466,8 +466,89 @@ BT
 0 g
 (India themes today: TRAI tightening telecom rules \(recharge plans, 5G slicing\), Dixon and)'
 (  Tata expanding manufacturing, India's chip ecosystem \(GaN, fabs, gases\))'
+0 -6 Td
+/F2 10 Tf
+(===== 2026-10-02 =====)'
+/F1 10 Tf
+(Source: https://techcrunch.com/category/artificial-intelligence/)'
+0 -6 Td
+/F2 10 Tf
+(1. Musk's AI chatbot Grok reportedly encouraged Trump to capture Venezuela's president)'
+/F1 10 Tf
+(   Reports say xAI's Grok chatbot urged Trump to capture Venezuela's president, raising)'
+(     questions about AI advice reaching political leaders.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-)'
+(     capture-venezuelas-president/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(2. ChatGPT can now virtually try on clothes for you)'
+/F1 10 Tf
+(   ChatGPT added a virtual try-on feature that shows how clothes might look on you.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(3. Google thinks SpaceX's Starship has to launch 1,800 times before space data centers get)'
+(  off the ground)'
+/F1 10 Tf
+(   Google estimates orbital data centers would need around 1,800 Starship launches,)'
+(     showing how far off the idea is.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-tim)'
+(     es-before-space-data-centers-get-off-the-ground/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(4. OpenAI cuts ties with 3 safety researchers, WSJ reports)'
+/F1 10 Tf
+(   OpenAI has parted ways with three safety researchers, according to the Wall Street)'
+(     Journal.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-re)'
+(     ports/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(5. Opus 5.5 loves to tell you 'this matters' \(and other AI writing tells\))'
+/F1 10 Tf
+(   A look at the stock phrases that give away AI-written text, including habits of)'
+(     Anthropic's Opus 5.5.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/10/01/opus-5-5-loves-to-tell-you-this-matters-and-other-ai-)'
+(     writing-tells/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(6. Amazon releases its own Jev clone as decision models flood the web)'
+/F1 10 Tf
+(   Amazon launched its own version of a "Jev clone" as more companies release)'
+(     decision-making AI models.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/10/01/amazon-releases-its-own-jev-clone-as-decision-models-)'
+(     flood-the-web/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(7. Shopify debuts Canvas, a way to build online stores by chatting with AI)'
+/F1 10 Tf
+(   Shopify's new Canvas tool lets merchants build an online store through an AI chat.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by)'
+(     -chatting-with-ai/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(8. Brian Chesky interview: AI agents need their own operating system)'
+/F1 10 Tf
+(   Airbnb CEO Brian Chesky argues that AI agents need a dedicated operating system.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/10/01/brian-chesky-interview-ai-agents-need-their-own-opera)'
+(     ting-system/)'
 ET
-BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 4 of 4) Tj ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 4 of 7) Tj ET
 endstream
 endobj
 42 0 obj
@@ -477,57 +558,469 @@ endobj
 <</Subtype/Link/Border[0 0 0]/Rect[50 680 500 692]/A<</S/URI/URI(https://www.goodreturns.in/news/indias-semiconductor-market-to-hit-usd-300-billion-by-2035-deloitte-011-1496641.html)>>>>
 endobj
 44 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 41 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Annots [42 0 R 43 0 R] >>
+<</Subtype/Link/Border[0 0 0]/Rect[50 551 500 563]/A<</S/URI/URI(https://techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-capture-venezuelas-president/)>>>>
+endobj
+45 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 493 480 505]/A<</S/URI/URI(https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/)>>>>
+endobj
+46 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 422 500 434]/A<</S/URI/URI(https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/)>>>>
+endobj
+47 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 351 500 363]/A<</S/URI/URI(https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/)>>>>
+endobj
+48 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 280 500 292]/A<</S/URI/URI(https://techcrunch.com/2026/10/01/opus-5-5-loves-to-tell-you-this-matters-and-other-ai-writing-tells/)>>>>
+endobj
+49 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 209 500 221]/A<</S/URI/URI(https://techcrunch.com/2026/10/01/amazon-releases-its-own-jev-clone-as-decision-models-flood-the-web/)>>>>
+endobj
+50 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 151 500 163]/A<</S/URI/URI(https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/)>>>>
+endobj
+51 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 93 500 105]/A<</S/URI/URI(https://techcrunch.com/2026/10/01/brian-chesky-interview-ai-agents-need-their-own-operating-system/)>>>>
+endobj
+52 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 41 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Annots [42 0 R 43 0 R 44 0 R 45 0 R 46 0 R 47 0 R 48 0 R 49 0 R 50 0 R 51 0 R] >>
+endobj
+53 0 obj
+<< /Length 3837 >>
+stream
+BT
+13 TL 50 792 Td
+0 g
+/F2 10 Tf
+(9. Photon held a funeral for mobile apps. Now it has $4.5M to help replace them with)'
+(  agents.)'
+/F1 10 Tf
+(   Startup Photon raised $4.5M to build AI agents meant to replace mobile apps.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/10/01/photon-held-a-funeral-for-mobile-apps-now-it-has-4-5m)'
+(     -to-help-replace-them-with-agents/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(10. Hearing tech startup Legato launches its AI hearing glasses)'
+/F1 10 Tf
+(   Legato launched glasses that use AI to help with hearing.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/10/01/hearing-tech-startup-legato-launches-its-ai-hearing-g)'
+(     lasses/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(11. Satlyt, founded by a former Google and SpaceX product manager, raises $8M to run AI on)'
+(  satellites)'
+/F1 10 Tf
+(   Satlyt raised $8M to run AI workloads directly on satellites.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/10/01/satlyt-founded-by-a-former-google-and-spacex-product-)'
+(     manager-raises-8m-to-run-ai-on-satellites/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(12. Google releases Gemini 4 Argon, called its most powerful model yet)'
+/F1 10 Tf
+(   Google launched Gemini 4 Argon, which it bills as its most capable AI model to date.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerf)'
+(     ul-model-yet/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(13. The AI race won't wait, and neither will this TechCrunch Disrupt 25% discount)'
+/F1 10 Tf
+(   TechCrunch is promoting a 25% ticket discount for its Disrupt 2026 conference.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/09/30/the-ai-race-wont-wait-and-neither-will-this-techcrunc)'
+(     h-disrupt-25-discount/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(14. Valor, Atreides, and Sequoia back AI startup Flow Engineering at $750M valuation)'
+/F1 10 Tf
+(   AI startup Flow Engineering drew backing from Valor, Atreides and Sequoia at a $750M)'
+(     valuation.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/09/30/valor-atreides-and-sequoia-back-ai-startup-flow-engin)'
+(     eering-at-750m-valuation/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(15. OpenAI's Jev clone could help the frontier lab stop its swarming agents)'
+/F1 10 Tf
+(   OpenAI's "Jev clone" may become a tool for reining in its runaway swarming AI agents.)'
+0 0.27 0.6 rg
+(   https://techcrunch.com/2026/09/30/openais-jev-clone-could-help-the-frontier-lab-stop-it)'
+(     s-swarming-agents/)'
+0 g
+/F2 10 Tf
+(Top themes today: AI agents replacing apps \(Photon, Chesky, Jev clones\), AI in politics &)'
+(  safety \(Grok, OpenAI researchers\), AI shopping & commerce \(ChatGPT try-on, Shopify)'
+(  Canvas\), AI in space \(Satlyt, orbital data centers\))'
+0 -6 Td
+(--- India: Telecom ---)'
+/F1 10 Tf
+(Source: Google News India \(telecom search\))'
+0 -6 Td
+/F2 10 Tf
+(1. TRAI asks telcos to display mandatory recharge plans, special tariff vouchers on)'
+(  websites, mobile apps [reported by 4 outlets: ET Telecom, The Economic Times, Deccan)'
+(  Herald, Business Today])'
+/F1 10 Tf
+(   TRAI wants telecom operators to make their mandated budget recharge plans easy to find)'
+(     on websites and apps.)'
+0 0.27 0.6 rg
+(   https://telecom.economictimes.indiatimes.com/news/policy/trai-asks-telcos-to-display-ma)'
+(     ndatory-recharge-plans-special-tariff-vouchers-on-websites-mobile-apps/134621235)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(2. Union Minister Jyotiraditya Scindia launches theme for 10th India Mobile Congress 2026)'
+(  [reported by 2 outlets: News On AIR, Zee Business])'
+/F1 10 Tf
+(   The telecom minister unveiled the theme for the 10th India Mobile Congress, which will)'
+(     focus on deep tech and startups.)'
+0 0.27 0.6 rg
+(   https://newsonair.gov.in/union-minister-jyotiraditya-scindia-launches-theme-for-10th-in)'
+(     dia-mobile-congress-2026/)'
+ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 5 of 7) Tj ET
+endstream
+endobj
+54 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 738 500 750]/A<</S/URI/URI(https://techcrunch.com/2026/10/01/photon-held-a-funeral-for-mobile-apps-now-it-has-4-5m-to-help-replace-them-with-agents/)>>>>
+endobj
+55 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 680 500 692]/A<</S/URI/URI(https://techcrunch.com/2026/10/01/hearing-tech-startup-legato-launches-its-ai-hearing-glasses/)>>>>
+endobj
+56 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 609 500 621]/A<</S/URI/URI(https://techcrunch.com/2026/10/01/satlyt-founded-by-a-former-google-and-spacex-product-manager-raises-8m-to-run-ai-on-satellites/)>>>>
+endobj
+57 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 551 500 563]/A<</S/URI/URI(https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/)>>>>
+endobj
+58 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 493 500 505]/A<</S/URI/URI(https://techcrunch.com/2026/09/30/the-ai-race-wont-wait-and-neither-will-this-techcrunch-disrupt-25-discount/)>>>>
+endobj
+59 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 422 500 434]/A<</S/URI/URI(https://techcrunch.com/2026/09/30/valor-atreides-and-sequoia-back-ai-startup-flow-engineering-at-750m-valuation/)>>>>
+endobj
+60 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 364 500 376]/A<</S/URI/URI(https://techcrunch.com/2026/09/30/openais-jev-clone-could-help-the-frontier-lab-stop-its-swarming-agents/)>>>>
+endobj
+61 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 196 500 208]/A<</S/URI/URI(https://telecom.economictimes.indiatimes.com/news/policy/trai-asks-telcos-to-display-mandatory-recharge-plans-special-tariff-vouchers-on-websites-mobile-apps/134621235)>>>>
+endobj
+62 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 112 500 124]/A<</S/URI/URI(https://newsonair.gov.in/union-minister-jyotiraditya-scindia-launches-theme-for-10th-india-mobile-congress-2026/)>>>>
+endobj
+63 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 53 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Annots [54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 59 0 R 60 0 R 61 0 R 62 0 R] >>
+endobj
+64 0 obj
+<< /Length 3788 >>
+stream
+BT
+13 TL 50 792 Td
+0 g
+/F2 10 Tf
+(3. TCIL pays Rs 43.86 crore dividend to government for FY26)'
+/F1 10 Tf
+(   State-owned Telecommunications Consultants India paid a Rs 43.86 crore dividend to the)'
+(     government for FY26.)'
+0 0.27 0.6 rg
+(   https://money.rediff.com/amp/news/market/tcil-pays-rs-43-86-cr-dividend-to-govt-for-fy2)'
+(     6/55432220261001)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(4. Jio looks beyond telecom to build a global technology business)'
+/F1 10 Tf
+(   Reliance Jio is positioning itself as a global technology company, not just a telecom)'
+(     operator.)'
+0 0.27 0.6 rg
+(   https://www.moneycontrol.com/news/business/companies/jio-looks-beyond-telecom-to-build-)'
+(     a-global-technology-business-14042857.html)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(5. Apple Pay finally arrives in India)'
+/F1 10 Tf
+(   Apple's mobile payment service has launched in India.)'
+0 0.27 0.6 rg
+(   https://developingtelecoms.com/telecom-technology/financial-services/20905-apple-pay-fi)'
+(     nally-arrives-in-india.html)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(6. FPI outflows hit telecom stocks, Vi diverges)'
+/F1 10 Tf
+(   Foreign portfolio investor selling weighed on Indian telecom stocks, though Vodafone)'
+(     Idea moved differently.)'
+0 0.27 0.6 rg
+(   https://www.communicationstoday.co.in/fpi-outflows-hit-telecom-stocks-vi-diverges/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(7. Telcos, consumer groups clash over TRAI's 5G slicing, coverage map and service quality)'
+(  rules [reported by 2 outlets: The Economic Times, NewsBytes])'
+/F1 10 Tf
+(   Telecom operators are pushing back on TRAI's proposed stricter rules for 5G network)'
+(     slicing, coverage maps and service quality.)'
+0 0.27 0.6 rg
+(   https://m.economictimes.com/industry/telecom/telecom-news/telcos-consumer-groups-clash-)'
+(     over-trais-5g-slicing-coverage-map-and-service-quality-rules/amp_articleshow/13460118)'
+(     8.cms)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(8. Dixon Technologies subsidiary inks licensing pact with Aviat to manufacture microwave)'
+(  radios [reported by 2 outlets: ET Telecom, Rediff MoneyWiz])'
+/F1 10 Tf
+(   A Dixon subsidiary will make Aviat's microwave radios in India under a licensing deal.)'
+0 0.27 0.6 rg
+(   https://telecom.economictimes.indiatimes.com/amp/news/telecom-equipment/dixon-technolog)'
+(     ies-subsidiary-inks-licensing-pact-with-aviat-to-manufacture-microwave-radios/1346059)'
+(     90)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(--- India: Electronics ---)'
+/F1 10 Tf
+(Source: Google News India \(electronics search\))'
+0 -6 Td
+/F2 10 Tf
+(1. Tata Electronics Posts $6.38 Billion in Corporate Guarantees to Back iPhone and Chip)'
+(  Ventures)'
+/F1 10 Tf
+(   Tata Electronics has put up $6.38B in corporate guarantees to back its iPhone and chip)'
+(     businesses.)'
+0 0.27 0.6 rg
+(   https://www.briefasia.com/en/article/tata-electronics-guarantees-iphone-chip-expansion)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(2. Startup Spintronics AI inks MoU with CSIR-CEERI to drive GaN technology development in)'
+(  India [reported by 3 outlets: ET Electronics, ET Manufacturing, Manufacturing Today)'
+(  India])'
+/F1 10 Tf
+(   SpintronicsAI and the government lab CSIR-CEERI will work together on gallium nitride)'
+(     \(GaN\) chip technology in India.)'
+0 0.27 0.6 rg
+(   http://electronics.economictimes.indiatimes.com/news/startups-funding/startup-spintroni)'
+(     cs-ai-inks-mou-with-csir-ceeri-to-drive-gan-technology-development-in-india/134612229)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(3. Linde Secures Sanand Land To Expand India Chip Gas Footprint)'
+/F1 10 Tf
+(   Industrial gas maker Linde got land in Sanand, Gujarat, to supply India's chip)'
+(     industry.)'
+0 0.27 0.6 rg
+(   https://www.businessworld.in/article/linde-secures-sanand-land-to-expand-india-chip-gas)'
+(     -footprint-625942)'
+ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 6 of 7) Tj ET
+endstream
+endobj
+65 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 738 500 750]/A<</S/URI/URI(https://money.rediff.com/amp/news/market/tcil-pays-rs-43-86-cr-dividend-to-govt-for-fy26/55432220261001)>>>>
+endobj
+66 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 667 500 679]/A<</S/URI/URI(https://www.moneycontrol.com/news/business/companies/jio-looks-beyond-telecom-to-build-a-global-technology-business-14042857.html)>>>>
+endobj
+67 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 609 500 621]/A<</S/URI/URI(https://developingtelecoms.com/telecom-technology/financial-services/20905-apple-pay-finally-arrives-in-india.html)>>>>
+endobj
+68 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 538 475 550]/A<</S/URI/URI(https://www.communicationstoday.co.in/fpi-outflows-hit-telecom-stocks-vi-diverges/)>>>>
+endobj
+69 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 467 500 479]/A<</S/URI/URI(https://m.economictimes.com/industry/telecom/telecom-news/telcos-consumer-groups-clash-over-trais-5g-slicing-coverage-map-and-service-quality-rules/amp_articleshow/134601188.cms)>>>>
+endobj
+70 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 383 500 395]/A<</S/URI/URI(https://telecom.economictimes.indiatimes.com/amp/news/telecom-equipment/dixon-technologies-subsidiary-inks-licensing-pact-with-aviat-to-manufacture-microwave-radios/134605990)>>>>
+endobj
+71 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 254 495 266]/A<</S/URI/URI(https://www.briefasia.com/en/article/tata-electronics-guarantees-iphone-chip-expansion)>>>>
+endobj
+72 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 170 500 182]/A<</S/URI/URI(http://electronics.economictimes.indiatimes.com/news/startups-funding/startup-spintronics-ai-inks-mou-with-csir-ceeri-to-drive-gan-technology-development-in-india/134612229)>>>>
+endobj
+73 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 99 500 111]/A<</S/URI/URI(https://www.businessworld.in/article/linde-secures-sanand-land-to-expand-india-chip-gas-footprint-625942)>>>>
+endobj
+74 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 64 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Annots [65 0 R 66 0 R 67 0 R 68 0 R 69 0 R 70 0 R 71 0 R 72 0 R 73 0 R] >>
+endobj
+75 0 obj
+<< /Length 2271 >>
+stream
+BT
+13 TL 50 792 Td
+0 g
+/F2 10 Tf
+(4. Rapidise To Quadruple Electronics Manufacturing Capacity In Manesar)'
+/F1 10 Tf
+(   Electronics maker Rapidise plans to expand its Manesar manufacturing capacity fourfold.)'
+0 0.27 0.6 rg
+(   https://www.electronicsforyou.biz/industry-buzz/rapidise-to-quadruple-electronics-manuf)'
+(     acturing-capacity-in-manesar/)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(5. India's Rs 62,500 Crore Mobile Manufacturing Scheme Targets Next Phase of Electronics)'
+(  Growth)'
+/F1 10 Tf
+(   A Rs 62,500 crore government scheme aims to push India's mobile phone manufacturing)'
+(     into its next growth phase.)'
+0 0.27 0.6 rg
+(   https://www.eletimes.ai/indias-rs-62500-crore-mobile-manufacturing-scheme-targets-next-)'
+(     phase-of-electronics-growth)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(6. Uttar Pradesh government looks to attract semiconductor fab unit [reported by 2)'
+(  outlets: ET Electronics, Electronics For You])'
+/F1 10 Tf
+(   Uttar Pradesh is trying to attract a semiconductor fabrication plant to the state.)'
+0 0.27 0.6 rg
+(   http://electronics.economictimes.indiatimes.com/news/leadership-strategy/uttar-pradesh-)'
+(     government-looks-to-attract-semiconductor-fab-unit-vijay-kiran-anand/134585292)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(7. India's electronics PLI crosses Rs 19,000 crore in incentives)'
+/F1 10 Tf
+(   Incentives paid out under India's electronics PLI scheme have passed Rs 19,000 crore.)'
+0 0.27 0.6 rg
+(   https://www.manufacturingtodayindia.com/indias-electronics-pli-crosses-%E2%82%B919000-c)'
+(     rore-in-incentives)'
+0 -6 Td
+0 g
+/F2 10 Tf
+(8. Haier, Godrej, Blue Star failed to detect fake e-waste recycling claims, India notice)'
+(  shows)'
+/F1 10 Tf
+(   A government notice says major appliance makers failed to catch fake e-waste recycling)'
+(     claims.)'
+0 0.27 0.6 rg
+(   https://electronics.economictimes.indiatimes.com/news/supply-chain-trade/haier-godrej-b)'
+(     lue-star-failed-to-detect-fake-e-waste-recycling-claims-india-notice-shows/134606090)'
+0 g
+(India themes today: TRAI tightening telecom rules \(recharge plans, 5G slicing\), India)'
+(  Mobile Congress run-up, government-backed electronics and chip manufacturing push \(PLI,)'
+(  mobile scheme, GaN, fabs\))'
+ET
+BT 0.45 0.45 0.45 rg /F1 8 Tf 495 25 Td (Page 7 of 7) Tj ET
+endstream
+endobj
+76 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 751 500 763]/A<</S/URI/URI(https://www.electronicsforyou.biz/industry-buzz/rapidise-to-quadruple-electronics-manufacturing-capacity-in-manesar/)>>>>
+endobj
+77 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 667 500 679]/A<</S/URI/URI(https://www.eletimes.ai/indias-rs-62500-crore-mobile-manufacturing-scheme-targets-next-phase-of-electronics-growth)>>>>
+endobj
+78 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 596 500 608]/A<</S/URI/URI(http://electronics.economictimes.indiatimes.com/news/leadership-strategy/uttar-pradesh-government-looks-to-attract-semiconductor-fab-unit-vijay-kiran-anand/134585292)>>>>
+endobj
+79 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 538 500 550]/A<</S/URI/URI(https://www.manufacturingtodayindia.com/indias-electronics-pli-crosses-%E2%82%B919000-crore-in-incentives)>>>>
+endobj
+80 0 obj
+<</Subtype/Link/Border[0 0 0]/Rect[50 454 500 466]/A<</S/URI/URI(https://electronics.economictimes.indiatimes.com/news/supply-chain-trade/haier-godrej-blue-star-failed-to-detect-fake-e-waste-recycling-claims-india-notice-shows/134606090)>>>>
+endobj
+81 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 75 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Annots [76 0 R 77 0 R 78 0 R 79 0 R 80 0 R] >>
 endobj
 xref
-0 45
+0 82
 0000000000 65535 f 
 0000000009 00000 n 
 0000000058 00000 n 
-0000000137 00000 n 
-0000000234 00000 n 
-0000000336 00000 n 
-0000000423 00000 n 
-0000004162 00000 n 
-0000004331 00000 n 
-0000004552 00000 n 
-0000004731 00000 n 
-0000004919 00000 n 
-0000005107 00000 n 
-0000005299 00000 n 
-0000005485 00000 n 
-0000005693 00000 n 
-0000005874 00000 n 
-0000006089 00000 n 
-0000006303 00000 n 
-0000010410 00000 n 
-0000010597 00000 n 
-0000010793 00000 n 
-0000010992 00000 n 
-0000011184 00000 n 
-0000011358 00000 n 
-0000011612 00000 n 
-0000011876 00000 n 
-0000012137 00000 n 
-0000012332 00000 n 
-0000012543 00000 n 
-0000016698 00000 n 
-0000016914 00000 n 
-0000017125 00000 n 
-0000017268 00000 n 
-0000017474 00000 n 
-0000017733 00000 n 
-0000017906 00000 n 
-0000018097 00000 n 
-0000018349 00000 n 
-0000018541 00000 n 
-0000018797 00000 n 
-0000019015 00000 n 
-0000020034 00000 n 
-0000020244 00000 n 
-0000020447 00000 n 
+0000000158 00000 n 
+0000000255 00000 n 
+0000000357 00000 n 
+0000000444 00000 n 
+0000004183 00000 n 
+0000004352 00000 n 
+0000004573 00000 n 
+0000004752 00000 n 
+0000004940 00000 n 
+0000005128 00000 n 
+0000005320 00000 n 
+0000005506 00000 n 
+0000005714 00000 n 
+0000005895 00000 n 
+0000006110 00000 n 
+0000006324 00000 n 
+0000010431 00000 n 
+0000010618 00000 n 
+0000010814 00000 n 
+0000011013 00000 n 
+0000011205 00000 n 
+0000011379 00000 n 
+0000011633 00000 n 
+0000011897 00000 n 
+0000012158 00000 n 
+0000012353 00000 n 
+0000012564 00000 n 
+0000016719 00000 n 
+0000016935 00000 n 
+0000017146 00000 n 
+0000017289 00000 n 
+0000017495 00000 n 
+0000017754 00000 n 
+0000017927 00000 n 
+0000018118 00000 n 
+0000018370 00000 n 
+0000018562 00000 n 
+0000018818 00000 n 
+0000019036 00000 n 
+0000022999 00000 n 
+0000023209 00000 n 
+0000023412 00000 n 
+0000023615 00000 n 
+0000023785 00000 n 
+0000024007 00000 n 
+0000024187 00000 n 
+0000024375 00000 n 
+0000024563 00000 n 
+0000024755 00000 n 
+0000024940 00000 n 
+0000025158 00000 n 
+0000029048 00000 n 
+0000029256 00000 n 
+0000029437 00000 n 
+0000029653 00000 n 
+0000029840 00000 n 
+0000030036 00000 n 
+0000030235 00000 n 
+0000030427 00000 n 
+0000030681 00000 n 
+0000030880 00000 n 
+0000031091 00000 n 
+0000034932 00000 n 
+0000035122 00000 n 
+0000035338 00000 n 
+0000035539 00000 n 
+0000035708 00000 n 
+0000035972 00000 n 
+0000036233 00000 n 
+0000036406 00000 n 
+0000036665 00000 n 
+0000036855 00000 n 
+0000037066 00000 n 
+0000039390 00000 n 
+0000039593 00000 n 
+0000039794 00000 n 
+0000040046 00000 n 
+0000040238 00000 n 
+0000040496 00000 n 
 trailer
-<< /Size 45 /Root 1 0 R /Info 5 0 R >>
+<< /Size 82 /Root 1 0 R /Info 5 0 R >>
 startxref
-20609
+40679
 %%EOF
